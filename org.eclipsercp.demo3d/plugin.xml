@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.eclipsercp.demo3d.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.eclipsercp.demo3d.Perspective"
+            name="Demo3d Perspective"
+            id="org.eclipsercp.demo3d.perspective">
+      </perspective>
+   </extension>
+   <extension
+           point="org.eclipse.ui.views">
+      <view
+              class="org.eclipsercp.demo3d.RibbonView"
+              id="org.eclipsercp.demo3d.ribbonview"
+              name="ribbonView"
+              restorable="true">
+      </view>
+   </extension>
+   <extension point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+              targetID="org.eclipsercp.demo3d.perspective">
+         <view id="org.eclipsercp.demo3d.ribbonview"
+               relative="org.eclipse.ui.editorss"
+               relationship="top"
+               ratio="0.1"
+               standalone="true"
+               showTitle="false"
+               closeable="false">  
+         </view>    
+      </perspectiveExtension>
+   </extension>
+
+</plugin>
